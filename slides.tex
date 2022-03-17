@@ -1,0 +1,214 @@
+\documentclass[xcolor=svgnames, 10pt, aspectratio=169]{beamer}
+
+% packages 
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{natbib}
+\usepackage{bibentry}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{adjustbox}
+\usepackage{listings}
+\usepackage{textcomp} 
+
+\lstset{ %
+numbers=none,           % where to put the line-numbers
+numberstyle=\tiny,      % the size of the fonts that are used for the line-numbers
+basicstyle=\footnotesize    % the size of the fonts that are used for the line-numbers
+}
+
+% don't display Figure or Table before caption
+\captionsetup[figure]{labelformat=empty}% redefines the caption setup of the figures environment in the beamer class.
+
+
+% space, not comma between author and year
+\setcitestyle{aysep={}}
+
+% Fonts
+\usepackage{mathpazo}
+
+% Template Setup
+\setbeamertemplate{frametitle}{\vskip+3pt \insertframetitle \vskip+3pt \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle \vskip-1pt \noindent \centerline{\rule{\textwidth}{0.4pt}}}
+\setbeamerfont{frametitle}{series=\bfseries, size=\Large}
+\setbeamerfont{framesubtitle}{series=\bfseries, size=\normalsize}
+\setbeamercolor{frametitle}{fg=myblue}
+\setbeamercolor{framesubtitle}{fg=black}
+\setbeamercolor{title}{fg=myblue}
+\setbeamercolor{date}{fg=myblue}
+
+% Colors
+\colorlet{myblue}{MidnightBlue!60!black!82}
+\colorlet{myred}{Red!60!black!82}
+
+% tikz 
+\usepackage{tikz}
+\usetikzlibrary{spy,calc,arrows,decorations.pathreplacing}
+
+% Set up the `tcolorboxes'
+\tcbset{
+    noparskip,
+    colback=Silver!8, 
+    colframe=myblue, 
+    boxrule=0.3pt,
+    coltext=black,
+    coltitle=white, 
+    fonttitle=\large\bfseries
+    }
+    
+% Itemize Item
+\setbeamercolor{itemize item}{fg=myblue, bg=white}
+\setbeamercolor{itemize subitem}{fg=myblue, bg=white}
+\setbeamercolor{itemize subsubitem}{fg=myblue, bg=white}
+
+\setbeamertemplate{itemize item}{\Large \raise-1pt \hbox{\textbullet}} 
+\setbeamertemplate{itemize subitem}{\large \raise-1pt \hbox{\textbullet}} 
+\setbeamertemplate{itemize subsubitem}{\small \raise-1pt \hbox{\textbullet}} 
+
+% Remove navigation bar
+\beamertemplatenavigationsymbolsempty
+
+% Include frame number
+%\setbeamertemplate{footline}[frame number]
+
+% start full screen
+%\hypersetup{pdfpagemode=FullScreen}
+
+% At the beginning of every section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \vfill 
+    \centering
+    {\color{myblue} \bfseries \huge \insertsectionhead}
+    \vfill 
+ 
+  \end{frame}
+}
+
+% Macros
+
+
+% Statistics
+\newcommand\pN{\mathcal{N}} % Normal distribution
+\newcommand\iidN{\overset{iid}{\sim}\mathcal{N}} % iid Normal
+\newcommand\E{\mathbb{E}} % Expectations Operator
+
+% Title Page
+\title{ \bfseries \LARGE Precision-based sampling with missing observations}
+\date{\vfill \bfseries Kiel Institute Research Seminar \\[4pt] March 22\textsuperscript{nd}, 2022}	
+
+\author[shortname]{
+                   Philipp Hauber\inst{1,2}
+                }  
+
+\institute[shortinst]{
+                      \inst{1} JMU Würzburg \\
+                      \inst{2} Kiel Institute for the World Economy (IfW)                        
+                     }
+ 
+% Body of the presentation
+\begin{document}
+
+%\setbeamertemplate{footline}{} % don't display slide numbers!
+\begin{frame}
+	\vskip+5.5pt
+    \centerline{\rule{1.1\textwidth}{0.4pt}}
+	
+    \maketitle
+
+    \centerline{\rule{1.1\textwidth}{0.4pt}}
+\end{frame}   
+
+\begin{frame}{This presentation}{}
+    Mash-up of two papers in my dissertation!\\~\\
+
+    
+
+    Method: 
+    \vspace{0.1cm}
+
+    Hauber, P and C. Schumacher (2021). \textit{Precision-based sampling with missing observations: A factor model application}, \textbf{Bundesbank Discussion Paper 11/2021}.
+    \\~\\
+    Application:  
+    \vspace{0.1cm}
+
+    Hauber, P. (2021) \textit{How useful is external information from professional forecasters? Conditional forecasts in large factor models} \medskip
+\end{frame}
+
+\begin{frame}{Motivation}
+
+Essential task in the Bayesian estimation of state space models: drawing from $p(\boldsymbol{\eta} | \mathbf{y}, \Theta)$ where $\boldsymbol{\eta}$ is an unobserved component, $\mathbf{y}$ is data and $\Theta$ parameters \\~\\
+
+Precision-based samplers (\citealp[][\scriptsize \textbf{IJMMNO}\normalsize]{chanjelizakov_2009}; \citealp[][\scriptsize \textbf{JEcmtrics}\normalsize]{mccausland_2012}) exploit the fact the precision matrix of $\boldsymbol{\eta}$ is banded in many macroeconomic application $\rightarrow$ alternative to simulation smoothers that rely on the Kalman filter \\~\\
+
+Applications in macroeconomics (with complete data) include models of trend inflation (\citealp[][\scriptsize \textbf{JBES}\normalsize]{chankooppotter_jae2013}), time-varying Bayesian vector autoregressions \citep[][\scriptsize \textbf{JBES}\normalsize]{chan_2020jbes} and factor models (\citealp[][\scriptsize \textbf{JAE}\normalsize]{kaufmannschumacher_jae2017})\\~\\
+
+Missing observations arise frequently in macroeconomic applications/datasets: different starting dates, different release patterns ("ragged edge"), outliers or mixed frequencies\\~\\
+
+In our paper, we propose a precision-sampler that can handle (most of these) applications! 
+
+\end{frame}
+
+\begin{frame}{Precision-based sampling}{Simple example: AR(2)}
+    
+\end{frame}
+
+\begin{frame}[fragile]{Precision-based sampling}{Computational advantages of a banded precision matrix}
+    The fact that $Q = \Sigma^{-1}$ is banded leads to several numerical advantages that can be exploited wh:
+
+    \begin{itemize}
+        \item factoring
+        \item the Cholesky factor $L$ such that $Q = LL'$ "inherits" the bandedness of Q
+        \item solving triangular systems of the form $Lx = b$
+    \end{itemize}
+
+    \\~\\
+
+    \begin{columns}[T]
+        \column{0.4\textwidth}
+        \begin{lstlisting}
+            for i = n:-1:1
+                % do something
+            end
+        \end{lstlisting}
+        \column{0.2\textwidth}
+        \column{0.4\textwidth}
+        \begin{lstlisting}
+            for i = n:-1:1
+                for j = 1:i
+                    % do something else
+                end
+            end
+        \end{lstlisting}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Precision-based sampling}{Drawing from $p(\boldsymbol{\eta} | \mathbf{y}, \Theta)$}
+    Ladidadida
+    {\footnotesize Ladidadida
+    \begin{lstlisting}
+    double x, y;
+    double z, w;
+    main();
+    return 0;
+    \end{lstlisting}
+    Ladidadida}
+    Ladidadida
+\end{frame}
+
+\begin{frame}{Precision-based sampling with missing observations}{Drawing from $p(\boldsymbol{\eta}, \mathbf{y}^m | \mathbf{y}^o, \Theta)$}
+    
+\end{frame}
+
+\begin{frame}[t, allowframebreaks]{References}
+    \scriptsize     
+    \bibliographystyle{aer}
+    \bibliography{biblio}
+\end{frame}
+
+\end{document}

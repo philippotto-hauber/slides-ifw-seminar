@@ -1,0 +1,11 @@
+\frametitle{Precision-based sampling}\framesubtitle {Drawing from $p(\boldsymbol {\eta } | \mathbf {y}, \Theta )$}
+    Ladidadida
+    {\footnotesize Ladidadida
+    \begin{lstlisting}
+    double x, y;
+    double z, w;
+    main();
+    return 0;
+    \end{lstlisting}
+    Ladidadida}
+    Ladidadida
