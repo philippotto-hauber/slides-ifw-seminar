@@ -1,0 +1,38 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Chan]{Chan}{2020}{chan_2020jbes}
+{\bf Chan, Joshua C.~C.}, ``Large Bayesian {VAR}s: A Flexible Kronecker Error
+  Covariance Structure,'' {\it Journal of Business \& Economic Statistics},
+  2020, {\it 38} (1), 68--79.
+
+\harvarditem[Chan et al.]{Chan, Koop and Potter}{2013}{chankooppotter_jae2013}
+{\bf \bysame{}, Gary Koop, and Simon~M. Potter}, ``A New Model of Trend
+  Inflation,'' {\it Journal of Business \& Economic Statistics}, 2013, {\it 31}
+  (1), 94--106.
+
+\harvarditem[Chan and Jeliazkov]{Chan and Jeliazkov}{2009}{chanjelizakov_2009}
+{\bf Chan, Joshua~CC and Ivan Jeliazkov}, ``Efficient simulation and integrated
+  likelihood estimation in state space models,'' {\it International Journal of
+  Mathematical Modelling and Numerical Optimisation}, 2009, {\it 1} (1-2),
+  101--120.
+
+\harvarditem[Golub and Van~Loan]{Golub and Van~Loan}{2013}{golubvanloan2013}
+{\bf Golub, Gene~H. and Charles~F.~Van Loan}, {\it Matrix Computations} Johns
+  Hopkins Studies in the Mathematical Sciences, 4\textsuperscript{th} ed.,
+  Johns Hopkins University Press, 2013.
+
+\harvarditem[Kaufmann and Schumacher]{Kaufmann and
+  Schumacher}{2017}{kaufmannschumacher_jae2017}
+{\bf Kaufmann, Sylvia and Christian Schumacher}, ``Identifying relevant and
+  irrelevant variables in sparse factor models,'' {\it Journal of Applied
+  Econometrics}, 2017, {\it 32} (6), 1123--1144.
+
+\harvarditem[McCausland]{McCausland}{2012}{mccausland_2012}
+{\bf McCausland, William~J.}, ``The {HESSIAN} method: Highly efficient
+  simulation smoothing, in a nutshell,'' {\it Journal of Econometrics}, 2012,
+  {\it 168} (2), 189--206.
+
+\end{thebibliography}

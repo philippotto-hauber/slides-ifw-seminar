@@ -318,6 +318,10 @@ INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstm
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.sty
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.cfg
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listings.cfg
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sauerj\parcolumns.sty
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sauerj\parcolumns.sty
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sauerj\processkv.sty
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sauerj\processkv.sty
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.sty
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.sty
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def
@@ -378,6 +382,8 @@ INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\tr
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\translator-numbers-dictionary-English.dict
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\translator-theorem-dictionary-English.dict
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\translator-theorem-dictionary-English.dict
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.nav
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.nav
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmss8.tfm
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmss12.tfm
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmssbx10.tfm
@@ -457,37 +463,69 @@ INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatin
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatino\pplbi8r.tfm
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7y.vf
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmsy10.tfm
-OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
-INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
-INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\ts1-lmss12.tfm
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmss8.tfm
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\ts1-lmss8.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7m.vf
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\fplmri.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatino\pplri8r.tfm
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7y.vf
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\fplmr.tfm
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatino\pplr8r.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7v.vf
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\fplmr.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7m.vf
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\fplmri.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatino\pplri8r.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\ts1-lmss12.tfm
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Sigma_Q.png
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Sigma_Q.png
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Sigma_Q.png
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Sigma_Q.png
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Sigma_Q.png
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmssbx10.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7t.vf
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\fplmr.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatino\pplr8r.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
 OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
 INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
 INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmss8.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\lm\ts1-lmss8.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmsy8.tfm
+OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.bbl
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.bbl
 OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.nav
 OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.toc
 OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.snm
 INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.aux
 INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.out
 INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.out
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\enc\dvips\lm\lm-rm.enc
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\enc\dvips\lm\lm-ts1.enc
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\enc\dvips\base\8r.enc
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\enc\dvips\lm\lm-rm.enc
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmbi.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmbi.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmr.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmr.pfb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmri.pfb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmri.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\lm\lmss10.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\lm\lmss10.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\lm\lmss12.pfb
@@ -500,3 +538,5 @@ INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\lm\l
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\lm\lmsso10.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\lm\lmsso8.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\lm\lmsso8.pfb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\urw\palatino\uplr8a.pfb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\urw\palatino\uplr8a.pfb

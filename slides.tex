@@ -14,6 +14,7 @@
 \usepackage{setspace}
 \usepackage{adjustbox}
 \usepackage{listings}
+\usepackage{parcolumns}
 \usepackage{textcomp} 
 
 \lstset{ %
@@ -97,6 +98,7 @@ basicstyle=\footnotesize    % the size of the fonts that are used for the line-n
 \newcommand\pN{\mathcal{N}} % Normal distribution
 \newcommand\iidN{\overset{iid}{\sim}\mathcal{N}} % iid Normal
 \newcommand\E{\mathbb{E}} % Expectations Operator
+\newcommand\transpose[1]{{#1}^{\sf{T}}}
 
 % Title Page
 \title{ \bfseries \LARGE Precision-based sampling with missing observations}
@@ -154,51 +156,86 @@ In our paper, we propose a precision-sampler that can handle (most of these) app
 
 \end{frame}
 
-\begin{frame}{Precision-based sampling}{Simple example: AR(2)}
-    
+\begin{frame}{Precision-based sampling}{Simple example}
+AR(2) process: $\eta_t = \phi_1 \eta_{t-1} + \phi_2 \eta_{t-2} + u_t; \, u_t \sim \mathcal{N}(0, \sigma^2)$ \\~\\
+
+Stacking the observations over $t = 1, \dots, T$ yields 
+$$
+\mathbf{H} \boldsymbol{\eta} = \mathbf{u}, \: \text{where} \: \mathbf{u} \sim \mathcal{N}(0, \mathbf{I}_T \sigma^2) \: \text{and} \:
+\mathbf{H} = 
+\left[
+\begin{smallmatrix}
+1 &  &  &  &  \\
+-\phi_1 & 1 &  &  &  \\
+-\phi_2 & -\phi_1 & 1 &  &  \\
+ & -\phi_2 & -\phi_1 & 1 &  &  \\
+ &  & \ddots & \ddots & \ddots &  & \\
+ &  &  &  -\phi_2 & -\phi_1 & 1
+\end{smallmatrix}
+\right]
+$$ \medskip
+
+
+$\boldsymbol{\eta}$ is Normal with mean $\mathbf{0}_T$ and covariance matrix $\Sigma = \mathbf{H}^{-1} \, \mathbf{I}_T\sigma^{2} \, \transpose{\mathbf{H}^{-1}}$ \\~\\
+
+corresponding \textit{precision matrix} is given by $\mathbf{Q} = \Sigma^{-1} = \transpose{\mathbf{H}} \, \mathbf{I}_T\sigma^{-2} \, \mathbf{H}$
 \end{frame}
 
-\begin{frame}[fragile]{Precision-based sampling}{Computational advantages of a banded precision matrix}
-    The fact that $Q = \Sigma^{-1}$ is banded leads to several numerical advantages that can be exploited wh:
+\begin{frame}{Precision-based sampling with missing observations}{Covariance and precision matrix of $\boldsymbol{\eta}$}
 
+    Properties of the multivariate Normal distribution: 
     \begin{itemize}
-        \item factoring
-        \item the Cholesky factor $L$ such that $Q = LL'$ "inherits" the bandedness of Q
-        \item solving triangular systems of the form $Lx = b$
-    \end{itemize}
+        \item $\Sigma_{ij} = 0$ $\Longrightarrow$ independence of $\eta_i$ and $\eta_j$
+        \item $\mathbf{Q}_{ij} = 0$ $\Longrightarrow$ \textbf{conditional} independence of $\eta_i$ and $\eta_j$ \\~\\
+    \end{itemize}    
 
-    \\~\\
+    \begin{adjustbox}{minipage=0.7\textwidth,center}
+        \begin{figure}
+            \includegraphics[scale = 0.65]{fig_Sigma_Q.png}  \vspace{0.1cm} \\
+        \end{figure}
+            \setstretch{0.1}
+            {\tiny \textbf{Notes}: The blue dots indicate the non-zero entries in the covariance matrix $\Sigma$ and precision matrix $\mathbf{Q}$ of an AR(2) process for $T=20$ observations. The former is a dense matrix while the latter is sparse and banded with lower and upper bandwidth equal to 2.}\par
+    \end{adjustbox}
+\end{frame}
 
-    \begin{columns}[T]
-        \column{0.4\textwidth}
+\begin{frame}[fragile]{Precision-based sampling}{Computational advantages of banded precision matrices}
+
+    Solving linear systems of the form $Ux = b$ where $U$ is an $n \times n$ upper-triangular matrix takes $n^2$ flops (left); when U has bandwidth $p$ the solution can be obtained in $2 n p$ flops (right):
+
+    \begin{columns}
+        \column{0.5\textwidth}
         \begin{lstlisting}
-            for i = n:-1:1
-                % do something
-            end
+    % solution to Ux=b
+    % U has maximal bandwidth
+    for i = n:-1:1
+        x(i) = b(i)/U(i,i)
+        for j = 1:i-1
+            b(j) = b(j) - U(j,i)x(i)
+        end
+    end
         \end{lstlisting}
-        \column{0.2\textwidth}
-        \column{0.4\textwidth}
+        %\hfill
+        \column{0.5\textwidth}
         \begin{lstlisting}
-            for i = n:-1:1
-                for j = 1:i
-                    % do something else
-                end
-            end
+% solution to Ux=b
+% U has bandwidth p            
+for i = n:-1:1
+    x(i) = b(i)/U(i,i)
+    for j = max{1,i-p}:i-1
+        b(j) = b(j) - U(j,i)x(i)
+    end
+end
         \end{lstlisting}
     \end{columns}
+    \vspace{0.3cm}
+
+    Even larger gains for matrix factorisations, e.g. Cholesky ($Q = \transpose{L}L$) $\Longrightarrow$ linear instead of cubic costs! \\~\\
+
+    $L$ "inherits" the bandwidth of $Q$ \citep[][Theorem X]{golubvanloan2013}
 \end{frame}
 
 \begin{frame}[fragile]{Precision-based sampling}{Drawing from $p(\boldsymbol{\eta} | \mathbf{y}, \Theta)$}
-    Ladidadida
-    {\footnotesize Ladidadida
-    \begin{lstlisting}
-    double x, y;
-    double z, w;
-    main();
-    return 0;
-    \end{lstlisting}
-    Ladidadida}
-    Ladidadida
+
 \end{frame}
 
 \begin{frame}{Precision-based sampling with missing observations}{Drawing from $p(\boldsymbol{\eta}, \mathbf{y}^m | \mathbf{y}^o, \Theta)$}

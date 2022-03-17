@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.17)  15 MAR 2022 16:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.17)  17 MAR 2022 16:36
 entering extended mode
 **c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/slides.tex
 (c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/slides.tex
@@ -752,7 +752,15 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
- ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+ ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sauerj\parcolumns.sty"
+Package: parcolumns 2004/11/25 v1.2 Typeset multiple parallel columns
+ ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sauerj\processkv.sty"
+Package: processkv 2004/08/09 v1.0.1 process key=value lists
+)
+\pc@columnctr=\count189
+\pc@columncount=\count190
+\pc@everypar=\toks52
+) ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -924,7 +932,7 @@ File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfdecoratedinputsegmentcompleteddistance=\dimen307
 \pgfdecoratedinputsegmentremainingdistance=\dimen308
 \pgf@decorate@distancetomove=\dimen309
-\pgf@decorate@repeatstate=\count189
+\pgf@decorate@repeatstate=\count191
 \pgfdecorationsegmentamplitude=\dimen310
 \pgfdecorationsegmentlength=\dimen311
 )
@@ -932,27 +940,27 @@ File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex")) (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.aux)
 \openout1 = `slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 115.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 117.
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 115.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 117.
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmss.fd"
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -992,17 +1000,17 @@ File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count190
+\scratchcounter=\count192
 \scratchdimen=\dimen312
 \scratchbox=\box75
-\nofMPsegments=\count191
-\nofMParguments=\count192
-\everyMPshowfont=\toks52
-\MPscratchCnt=\count193
+\nofMPsegments=\count193
+\nofMParguments=\count194
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count195
 \MPscratchDim=\dimen313
-\MPnumerator=\count194
-\makeMPintoPDFobject=\count195
-\everyMPtoPDFconversion=\toks53
+\MPnumerator=\count196
+\makeMPintoPDFobject=\count197
+\everyMPtoPDFconversion=\toks54
 ) ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
@@ -1014,67 +1022,67 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box76
-Package hyperref Info: Link coloring OFF on input line 115.
+Package hyperref Info: Link coloring OFF on input line 117.
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count196
+\c@section@level=\count198
 )
-LaTeX Info: Redefining \ref on input line 115.
-LaTeX Info: Redefining \pageref on input line 115.
-LaTeX Info: Redefining \nameref on input line 115.
+LaTeX Info: Redefining \ref on input line 117.
+LaTeX Info: Redefining \pageref on input line 117.
+LaTeX Info: Redefining \nameref on input line 117.
  (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.out) (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.out)
 \@outlinefile=\write7
 \openout7 = `slides.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/ppl/m/n --> OT1/cmss/m/n on input line 115.
+(Font)                  OT1/ppl/m/n --> OT1/cmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/ppl/b/n --> OT1/cmss/bx/n on input line 115.
+(Font)                  OT1/ppl/b/n --> OT1/cmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 115.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 115.
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 117.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/ppl/m/n on input line 115.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 115.
+(Font)                  OT1/lmss/m/n --> OT1/ppl/m/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/zplm/b/n --> OT1/lmss/bx/n on input line 115.
+(Font)                  OT1/zplm/b/n --> OT1/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/zplm/b/n --> OT1/lmss/bx/n on input line 115.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 115.
+(Font)                  OT1/zplm/b/n --> OT1/lmss/bx/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 115.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 115.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 115.
+(Font)                  OT1/lmss/bx/n --> OT1/lmss/m/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/ppl/m/it --> OT1/lmss/m/it on input line 115.
+(Font)                  OT1/ppl/m/it --> OT1/lmss/m/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/ppl/b/it --> OT1/lmss/m/it on input line 115.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 115.
+(Font)                  OT1/ppl/b/it --> OT1/lmss/m/it on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 115.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 115.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/bx/n on input line 115.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/bx/it on input line 115.
+(Font)                  OT1/lmss/m/it --> OT1/lmss/bx/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/ppl/bx/n on input line 115.
+(Font)                  OT1/lmss/bx/n --> OT1/ppl/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> OT1/lmss/bx/n on input line 115.
+(Font)                  OT1/lmss/bx/n --> OT1/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/m/n --> OT1/lmss/bx/n on input line 115.
+(Font)                  OT1/lmss/m/n --> OT1/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmss/m/it --> OT1/lmss/bx/it on input line 115.
+(Font)                  OT1/lmss/m/it --> OT1/lmss/bx/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/bx/n on input line 115.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/bx/n on input line 117.
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\translator-basic-dictionary-English.dict"
 Dictionary: translator-basic-dictionary, Language: English 
 ) ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\translator-bibliography-dictionary-English.dict"
@@ -1091,104 +1099,108 @@ Dictionary: translator-theorem-dictionary, Language: English
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count197
-
-No file slides.nav.
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 125.
-("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omlzplm.fd"
+\c@lstlisting=\count199
+ (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.nav)
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 127.
+ ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omlzplm.fd"
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 125.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 127.
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omszplm.fd"
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 125.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 127.
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omxzplm.fd"
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 125.
+(Font)              scaled to size 10.42007pt on input line 127.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 125.
+(Font)              scaled to size 7.91925pt on input line 127.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 125.
+(Font)              scaled to size 6.25204pt on input line 127.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 125.
+(Font)              scaled to size 10.42007pt on input line 127.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 125.
+(Font)              scaled to size 7.91925pt on input line 127.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 125.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 125.
+(Font)              scaled to size 6.25204pt on input line 127.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 127.
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1zplm.fd"
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 125.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 127.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7.6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 125.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 127.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 125.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 127.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 125.
+(Font)              scaled to size 7.29405pt on input line 127.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 125.
+(Font)              scaled to size 5.21004pt on input line 127.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 125.
+(Font)              scaled to size 7.29405pt on input line 127.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 125.
+(Font)              scaled to size 5.21004pt on input line 127.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 125.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 127.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 125.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 127.
  [1
 
 {C:/Users/Philipp/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
 
 ]
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 155.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 157.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <7.6> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 155.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 157.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 155.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 157.
  [3
 
 ] [4
 
 ]
-\openout4 = `slides.vrb'.
-
- (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 5.
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 199.
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd"
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+<fig_Sigma_Q.png, id=60, 340.6326pt x 166.7028pt>
+File: fig_Sigma_Q.png Graphic file (type png)
+<use fig_Sigma_Q.png>
+Package pdftex.def Info: fig_Sigma_Q.png  used on input line 199.
+(pdftex.def)             Requested size: 221.40855pt x 108.35551pt.
+ [5
 
-c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb:10: LaTeX Error: There's no line here to end.
+ <c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/fig_Sigma_Q.png (PNG copy)>]
+\openout4 = `slides.vrb'.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
+LaTeX Font Info:    Try loading font information for OMS+lmss on input line 24.
+LaTeX Font Info:    No file OMSlmss.fd. on input line 24.
 
 
-Overfull \hbox (39.56903pt too wide) in paragraph at lines 24--25
-[][][][][][][][][][] 
- []
+LaTeX Font Warning: Font shape `OMS/lmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 24.
 
-) [5
+) [6
 
 ]
 \openout4 = `slides.vrb'.
 
- (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb) [6
+ (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb) [7
 
-] [7
+] [8
 
-]
-No file slides.bbl.
-[8
+] (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.bbl
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\translate ' on input line 4.
+
+) [9
 
 ]
 \tf@nav=\write8
@@ -1200,50 +1212,30 @@ No file slides.bbl.
 \tf@snm=\write10
 \openout10 = `slides.snm'.
 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 251.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 251.
+ (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 251.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 251.
+Package rerunfilecheck Info: File `slides.out' has not changed.
+(rerunfilecheck)             Checksum: 8A4411D8FDC471D5B1172A69FD03E390;46.
 
 
-Package caption Warning: Unused \captionsetup[figure] on input line 26.
-See the caption package documentation for explanation.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
-(c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
-
-
-Package rerunfilecheck Warning: File `slides.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `slides.out':
-(rerunfilecheck)             Before: 8A4411D8FDC471D5B1172A69FD03E390;46
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28090 strings out of 492969
- 562621 string characters out of 3125697
- 616281 words of memory out of 3000000
- 31342 multiletter control sequences out of 15000+200000
- 82275 words of font info for 89 fonts, out of 3000000 for 9000
+ 28231 strings out of 492969
+ 565389 string characters out of 3125697
+ 629599 words of memory out of 3000000
+ 31452 multiletter control sequences out of 15000+200000
+ 89721 words of font info for 103 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,11n,80p,826b,1465s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{cite.kaufmannschumacher_jae2017} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.chan_2020jbes} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.chankooppotter_jae2013} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.mccausland_2012} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.chanjelizakov_2009} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.1} has been referenced but does not exist, replaced by a fixed one
-
-{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmbi.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb>
-Output written on c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.pdf (8 pages, 163713 bytes).
+ 56i,11n,80p,826b,1656s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmbi.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.pdf (9 pages, 241834 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
