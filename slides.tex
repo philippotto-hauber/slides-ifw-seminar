@@ -16,16 +16,23 @@
 \usepackage{listings}
 \usepackage{parcolumns}
 \usepackage{textcomp} 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
 \lstset{ %
+language=Matlab,
 numbers=none,           % where to put the line-numbers
 numberstyle=\tiny,      % the size of the fonts that are used for the line-numbers
-basicstyle=\footnotesize    % the size of the fonts that are used for the line-numbers
+basicstyle=\footnotesize,    % the size of the fonts that are used for the line-numbers
+escapeinside={(*@}{@*)}
 }
 
 % don't display Figure or Table before caption
 \captionsetup[figure]{labelformat=empty}% redefines the caption setup of the figures environment in the beamer class.
 
+% Algorithms
+\renewcommand{\thealgorithm}{2.\arabic{algorithm}}
+\setcounter{algorithm}{0}
 
 % space, not comma between author and year
 \setcitestyle{aysep={}}
@@ -61,6 +68,9 @@ basicstyle=\footnotesize    % the size of the fonts that are used for the line-n
     fonttitle=\large\bfseries
     }
     
+% Links
+\setbeamercolor{button}{bg=myblue,fg=white}    
+
 % Itemize Item
 \setbeamercolor{itemize item}{fg=myblue, bg=white}
 \setbeamercolor{itemize subitem}{fg=myblue, bg=white}
@@ -183,7 +193,8 @@ corresponding \textit{precision matrix} is given by $\mathbf{Q} = \Sigma^{-1} = 
 
 \begin{frame}{Precision-based sampling with missing observations}{Covariance and precision matrix of $\boldsymbol{\eta}$}
 
-    Properties of the multivariate Normal distribution: 
+    Properties of the multivariate $\mathcal{N}$: 
+
     \begin{itemize}
         \item $\Sigma_{ij} = 0$ $\Longrightarrow$ independence of $\eta_i$ and $\eta_j$
         \item $\mathbf{Q}_{ij} = 0$ $\Longrightarrow$ \textbf{conditional} independence of $\eta_i$ and $\eta_j$ \\~\\
@@ -205,7 +216,7 @@ corresponding \textit{precision matrix} is given by $\mathbf{Q} = \Sigma^{-1} = 
     \begin{columns}
         \column{0.5\textwidth}
         \begin{lstlisting}
-    % solution to Ux=b
+    % solution to Ux = b
     % U has maximal bandwidth
     for i = n:-1:1
         x(i) = b(i)/U(i,i)
@@ -217,11 +228,11 @@ corresponding \textit{precision matrix} is given by $\mathbf{Q} = \Sigma^{-1} = 
         %\hfill
         \column{0.5\textwidth}
         \begin{lstlisting}
-% solution to Ux=b
+% solution to Ux = b
 % U has bandwidth p            
 for i = n:-1:1
     x(i) = b(i)/U(i,i)
-    for j = max{1,i-p}:i-1
+    for j = (*@\textcolor{red}{\,\textbf{max}\,\{1\,,\,i\,\textendash\,p\,\}}@*):i-1
         b(j) = b(j) - U(j,i)x(i)
     end
 end
@@ -229,13 +240,61 @@ end
     \end{columns}
     \vspace{0.3cm}
 
-    Even larger gains for matrix factorisations, e.g. Cholesky ($Q = \transpose{L}L$) $\Longrightarrow$ linear instead of cubic costs! \\~\\
+    Even larger gains for matrix factorisations, e.g. Cholesky ($Q = L\transpose{L}$) $\Longrightarrow$ linear instead of cubic costs! \\~\\
 
-    $L$ "inherits" the bandwidth of $Q$ \citep[][Theorem X]{golubvanloan2013}
+    $L$ "inherits" the bandwidth of $Q$ \citep[][Theorem 4.3.1]{golubvanloan2013}
+\end{frame}
+
+\begin{frame}{Precision-based sampling}{Factor model}
+    To fix ideas, consider the following factor model:
+    \begin{align*}
+        \mathbf{y}_t &= \lambda \boldsymbol{\eta}_t + \mathbf{e}_t \\
+        \mathbf{e}_t &= \phi^{e} \mathbf{e}_{t-1} + \boldsymbol{\epsilon}_t;\: \boldsymbol{\epsilon}_t \sim \mathcal{N}(0, diag([\sigma^2_1, \cdots, \sigma^2_N])) \\
+        \boldsymbol{\eta}_t &= \phi^{\eta} \boldsymbol{\eta}_{t-1} + \mathbf{u}_t;\: \mathbf{u}_t \sim \mathcal{N}(0, \Sigma_u)
+    \end{align*}
+
+    where $\mathbf{y}_t$ is an $N\times 1$ vector of data and $\eta_t$ is an $R\times 1$ vector of unobserved factors \\~\\
+
+    Bayesian estimation of the model is done via a Gibbs Sampler which sequentially draws from \vspace{0.2cm}
+    \begin{itemize}
+        \item the conditional distribution of factors given data and parameters: $p(\boldsymbol{\eta} | \mathbf{y}, \Theta)$ 
+        \item the conditional distribution of parameters given data and factors:$p(\Theta | \boldsymbol{\eta}, \mathbf{y})$
+    \end{itemize}
+
+    %where $\Theta = [\lambda, \phi^e, \phi^{\eta}, \Sigma_u, \sigma_1^2, \cdots, \sigma_N^2]$
+
 \end{frame}
 
 \begin{frame}[fragile]{Precision-based sampling}{Drawing from $p(\boldsymbol{\eta} | \mathbf{y}, \Theta)$}
+    \label{precsampl_draw_eta}
+    Joint distribution of states $\boldsymbol{\eta} = \transpose{[\transpose{\boldsymbol{\eta}_1}, \cdots, \transpose{\boldsymbol{\eta}_T}]}$ and data $\mathbf{y} = \transpose{[\transpose{\mathbf{y}}_1, \cdots, \transpose{\mathbf{y}}_T]}$ given parameters: 
+    $$
+            \mathbf{z} =
+            \begin{bmatrix}
+                \boldsymbol{\eta} \\ 
+                \mathbf{y}
+            \end{bmatrix}     
+            \sim        
+            \mathcal{N}(\mathbf{0}, \mathbf{Q}^{-1})
+            ; \: \mathbf{Q} = 
+            \begin{bmatrix}
+                \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta y} \\
+                \mathbf{Q}_{\eta y}' & \mathbf{Q}_{y}
+            \end{bmatrix}   
+            \hyperlink{app_mapping}{\beamerbutton{Mapping from $\Theta$ to $\mathbf{Q}$}} 
+    $$ \\~\\    
+    
+    Standard result for the multivariate $\mathcal{N}$: $p(\boldsymbol{\eta} | \mathbf{y}, \Theta) = \mathcal{N}(-\mathbf{Q}_{\eta}^{-1} \mathbf{Q}_{\eta y} \mathbf{y}, \mathbf{Q}_{\eta}^{-1})$\\~\\
 
+    Sampling from this distribution does \textbf{not} require the inversion of (the potentially very large matrix) $\mathbf{Q}_{\eta}$ and because it is banded, 
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item the mean $-\mathbf{Q}_{\eta}^{-1} \mathbf{Q}_{\eta y} \mathbf{y}$ 
+        \item and a random draw given mean and precision matrix 
+    \end{itemize}
+    \vspace{0.2cm}
+    can be obtained efficiently! \hyperlink{app_rueheld_algs}{\beamerbutton{\citet[][Algorithms 2.1, 2.4]{rueheld_book2005}}}
+    
 \end{frame}
 
 \begin{frame}{Precision-based sampling with missing observations}{Drawing from $p(\boldsymbol{\eta}, \mathbf{y}^m | \mathbf{y}^o, \Theta)$}
@@ -246,6 +305,39 @@ end
     \scriptsize     
     \bibliographystyle{aer}
     \bibliography{biblio}
+\end{frame}
+
+\begin{frame}{Appendix}{Mapping from $\Theta$ to $\mathbf{Q}$}
+\label{app_mapping}
+ladida
+ladida
+\end{frame}
+
+\begin{frame}{Appendix}{\citet[][Algorithm 2.1, 2.4]{rueheld_book2005}}
+    \label{app_rueheld_algs}
+    \setcounter{algorithm}{0}
+    \begin{algorithm}[H]
+        \caption{Solving $\mathbf{A} \mathbf{x} = \mathbf{b}$ where $\mathbf{A} > 0$}
+        \begin{algorithmic}[1]
+            \State Compute the Cholesky factorization $\mathbf{A} = \mathbf{L}\transpose{\mathbf{L}}$
+            \State Solve $\mathbf{L}\mathbf{v} = \mathbf{b}$ via forward substitution
+            \State Solve $\transpose{\mathbf{L}}\mathbf{x} = \mathbf{v}$ via backward substitution\\
+            \Return $\mathbf{x}$
+        \end{algorithmic}
+    \end{algorithm}
+    \setcounter{algorithm}{3}
+    \begin{algorithm}[H]
+        \caption{Sampling $\mathbf{x} \sim \mathcal{N}(\boldsymbol{\mu}, \mathbf{Q}^{-1})$}
+        \begin{algorithmic}[1]
+            \State Compute the Cholesky factorization $\mathbf{Q} = \mathbf{L}\transpose{\mathbf{L}}$
+            \State Sample $\mathbf{z} \sim \mathcal{N}(\boldsymbol{\mu}, \mathbf{I})$
+            \State Solve $\transpose{\mathbf{L}} \mathbf{v} = \mathbf{z}$
+            \State Compute $\mathbf{x} = \boldsymbol{\mu} + \mathbf{v}$\\
+            \Return $\mathbf{x}$
+        \end{algorithmic}
+    \end{algorithm}
+
+    \hyperlink{precsampl_draw_eta}{\beamerreturnbutton{Back}}
 \end{frame}
 
 \end{document}

@@ -1,2 +1,30 @@
 \frametitle{Precision-based sampling}\framesubtitle {Drawing from $p(\boldsymbol {\eta } | \mathbf {y}, \Theta )$}
+    \label{precsampl_draw_eta}
+    Joint distribution of states $\boldsymbol{\eta} = \transpose{[\transpose{\boldsymbol{\eta}_1}, \cdots, \transpose{\boldsymbol{\eta}_T}]}$ and data $\mathbf{y} = \transpose{[\transpose{\mathbf{y}}_1, \cdots, \transpose{\mathbf{y}}_T]}$ given parameters:
+    $$
+            \mathbf{z} =
+            \begin{bmatrix}
+                \boldsymbol{\eta} \\
+                \mathbf{y}
+            \end{bmatrix}
+            \sim
+            \mathcal{N}(\mathbf{0}, \mathbf{Q}^{-1})
+            ; \: \mathbf{Q} =
+            \begin{bmatrix}
+                \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta y} \\
+                \mathbf{Q}_{\eta y}' & \mathbf{Q}_{y}
+            \end{bmatrix}
+            \hyperlink{app_mapping}{\beamerbutton{Mapping from $\Theta$ to $\mathbf{Q}$}}
+    $$ \\~\\
+
+    Standard result for the multivariate $\mathcal{N}$: $p(\boldsymbol{\eta} | \mathbf{y}, \Theta) = \mathcal{N}(-\mathbf{Q}_{\eta}^{-1} \mathbf{Q}_{\eta y} \mathbf{y}, \mathbf{Q}_{\eta}^{-1})$\\~\\
+
+    Sampling from this distribution does \textbf{not} require the inversion of (the potentially very large matrix) $\mathbf{Q}_{\eta}$ and because it is banded,
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item the mean $-\mathbf{Q}_{\eta}^{-1} \mathbf{Q}_{\eta y} \mathbf{y}$
+        \item and a random draw given mean and precision matrix
+    \end{itemize}
+    \vspace{0.2cm}
+    can be obtained efficiently! \hyperlink{app_rueheld_algs}{\beamerbutton{\citet[][Algorithms 2.1, 2.4]{rueheld_book2005}}}
 
