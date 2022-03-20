@@ -11,15 +11,15 @@
             \mathcal{N}(\mathbf{0}, \mathbf{Q}^{-1})
             ; \: \mathbf{Q} =
             \begin{bmatrix}
-                \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta y} \\
-                \mathbf{Q}_{\eta y}' & \mathbf{Q}_{y}
+                \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta, y} \\
+                \transpose{\mathbf{Q}}_{\eta, y} & \mathbf{Q}_{y}
             \end{bmatrix}
             \hyperlink{app_mapping}{\beamerbutton{Mapping from $\Theta$ to $\mathbf{Q}$}}
     $$ \\~\\
 
     Standard result for the multivariate $\mathcal{N}$: $p(\boldsymbol{\eta} | \mathbf{y}, \Theta) = \mathcal{N}(-\mathbf{Q}_{\eta}^{-1} \mathbf{Q}_{\eta y} \mathbf{y}, \mathbf{Q}_{\eta}^{-1})$\\~\\
 
-    Sampling from this distribution does \textbf{not} require the inversion of (the potentially very large matrix) $\mathbf{Q}_{\eta}$ and because it is banded,
+    Sampling from this distribution does \textbf{not} require the inversion of (the potentially very large matrix) $\mathbf{Q}_{\eta}$ and because it is banded
     \vspace{0.2cm}
     \begin{itemize}
         \item the mean $-\mathbf{Q}_{\eta}^{-1} \mathbf{Q}_{\eta y} \mathbf{y}$

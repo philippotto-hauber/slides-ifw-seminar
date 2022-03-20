@@ -52,6 +52,7 @@ escapeinside={(*@}{@*)}
 % Colors
 \colorlet{myblue}{MidnightBlue!60!black!82}
 \colorlet{myred}{Red!60!black!82}
+\definecolor{amber}{rgb}{1.0, 0.75, 0.0}
 
 % tikz 
 \usepackage{tikz}
@@ -232,7 +233,7 @@ corresponding \textit{precision matrix} is given by $\mathbf{Q} = \Sigma^{-1} = 
 % U has bandwidth p            
 for i = n:-1:1
     x(i) = b(i)/U(i,i)
-    for j = (*@\textcolor{red}{\,\textbf{max}\,\{1\,,\,i\,\textendash\,p\,\}}@*):i-1
+    for j = (*@\textcolor{myred}{\,\textbf{max}\,\{1\,,\,i\,\textendash\,p\,\}}@*):i-1
         b(j) = b(j) - U(j,i)x(i)
     end
 end
@@ -278,15 +279,15 @@ end
             \mathcal{N}(\mathbf{0}, \mathbf{Q}^{-1})
             ; \: \mathbf{Q} = 
             \begin{bmatrix}
-                \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta y} \\
-                \mathbf{Q}_{\eta y}' & \mathbf{Q}_{y}
+                \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta, y} \\
+                \transpose{\mathbf{Q}}_{\eta, y} & \mathbf{Q}_{y}
             \end{bmatrix}   
             \hyperlink{app_mapping}{\beamerbutton{Mapping from $\Theta$ to $\mathbf{Q}$}} 
     $$ \\~\\    
     
     Standard result for the multivariate $\mathcal{N}$: $p(\boldsymbol{\eta} | \mathbf{y}, \Theta) = \mathcal{N}(-\mathbf{Q}_{\eta}^{-1} \mathbf{Q}_{\eta y} \mathbf{y}, \mathbf{Q}_{\eta}^{-1})$\\~\\
 
-    Sampling from this distribution does \textbf{not} require the inversion of (the potentially very large matrix) $\mathbf{Q}_{\eta}$ and because it is banded, 
+    Sampling from this distribution does \textbf{not} require the inversion of (the potentially very large matrix) $\mathbf{Q}_{\eta}$ and because it is banded 
     \vspace{0.2cm}
     \begin{itemize}
         \item the mean $-\mathbf{Q}_{\eta}^{-1} \mathbf{Q}_{\eta y} \mathbf{y}$ 
@@ -297,9 +298,75 @@ end
     
 \end{frame}
 
-\begin{frame}{Precision-based sampling with missing observations}{Drawing from $p(\boldsymbol{\eta}, \mathbf{y}^m | \mathbf{y}^o, \Theta)$}
-    
+\begin{frame}{Precision-based sampling with missing observations}{Drawing from $p(\boldsymbol{\eta}, \mathbf{y}^m | \mathbf{y}^o, \Theta)$: 3 block ordering}
+    What to do when some observations in $\mathbf{y}$ are missing? \\~\\
+
+    E.g. a model with one factor and data $\mathbf{y}=\transpose{[y_{11}, y_{12}, \text{NaN}, y_{22}, y_{31}, \text{NaN},  \text{NaN}, \text{NaN}, y_{51}, \text{NaN}]}$\\~\\
+
+    Reorder the model in 3 blocks as: 
+    $$
+    \mathbf{z}_{3b} =
+    \begin{bmatrix}
+        \boldsymbol{\eta} \\ 
+        \mathbf{y^m}\\
+        \mathbf{y^o}
+    \end{bmatrix}  
+    \equiv
+    \begin{bmatrix}
+        \mathbf{z}^{3b}_{\eta y^m} \\
+        \mathbf{z}^{3b}_{y^o}
+    \end{bmatrix}     
+    \sim        
+    \mathcal{N}(\mathbf{0}, \mathbf{Q}_{3b}^{-1})
+    ; \: \mathbf{Q}_{3b} = 
+    \begin{bmatrix}
+        \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta, y^m} & \mathbf{Q}_{\eta y^o} \\
+        \transpose{\mathbf{Q}}_{\eta, y^m} & \mathbf{Q}_{y^m} & \mathbf{Q}_{y^m, y^o} \\
+        \transpose{\mathbf{Q}}_{\eta, y^o} & \transpose{\mathbf{Q}}_{y^m, y^o} & \mathbf{Q}_{y^o}
+    \end{bmatrix}   
+    \equiv
+    \begin{bmatrix}
+        \mathbf{Q}^{3b}_{\eta y^m} & \mathbf{Q}^{3b}_{\eta y^m, y^o}  \\
+        \mathbf{Q}^{3b, \sf{T}}_{\eta y^m, y^o} & \mathbf{Q}^{3b}_{ y^o} 
+    \end{bmatrix} 
+    $$ \\~\\ 
+
+    \textbf{Example}: 
+    $$\mathbf{z}_{3b} = \transpose{   
+    [\textcolor{myblue}{\boldsymbol{\eta}}, \textcolor{myred}{\mathbf{y^m}}, \textcolor{amber}{\mathbf{y^o}}]
+    } = 
+    \transpose{[\textcolor{myblue}{\eta_1}, \textcolor{myblue}{\eta_2}, \textcolor{myblue}{\eta_3}, \textcolor{myblue}{\eta_5}, \textcolor{myblue}{\eta_5}, \textcolor{myred}{y_{21}}, \textcolor{myred}{y_{32}}, \textcolor{myred}{y_{41}}, \textcolor{myred}{y_{42}}, \textcolor{myred}{y_{52}},\textcolor{amber}{y_{11}}, \textcolor{amber}{y_{12}}, \textcolor{amber}{y_{22}}, \textcolor{amber}{y_{31}}, \textcolor{amber}{y_{51}}]}
+    $$    
 \end{frame}
+
+\begin{frame}{Precision-based sampling with missing observations}{Drawing from $p(\boldsymbol{\eta}, \mathbf{y}^m | \mathbf{y}^o, \Theta)$: time-t ordering}
+
+    However, $Var(\mathbf{z}^{3b}_{\eta y^m|y^o})^{-1} =\mathbf{Q}^{3b}_{\eta y^m}$ will in general \textbf{not} be a banded matrix, so sampling as in the case of complete data not feasible! \\~\\ 
+    
+    $\Longrightarrow$ different ordering of $\mathbf{z}$ that groups conditionally dependent components - $\boldsymbol{\eta}_t$  and $\mathbf{y}^m_t$ (\textit{time-t ordering} - together:
+    $\mathbf{z}_{\tau} = \mathcal{P}_{\tau} \mathbf{z}$ and corresponding precision matrix $Q_{\tau} = \mathcal{P}_{\tau} \mathbf{Q} \transpose{\mathcal{P}_{\tau}}$\\~\\ 
+
+    \textbf{Example}: $\mathbf{z}_{\mathcal{P}_{\tau}} = \transpose{[\textcolor{myblue}{\eta_1}, \textcolor{myblue}{\eta_2},  \textcolor{myred}{y_{21}}, \textcolor{myblue}{\eta_3}, \textcolor{myred}{y_{32}}, \textcolor{myblue}{\eta_4}, \textcolor{myred}{y_{41}}, \textcolor{myred}{y_{42}}, \textcolor{myblue}{\eta_5}, \textcolor{myred}{y_{52}}, \textcolor{amber}{y_{11}}, \textcolor{amber}{y_{12}}, \textcolor{amber}{y_{22}}, \textcolor{amber}{y_{31}}, \textcolor{amber}{y_{51}}]}$ \\~\\  
+
+    This ensures that the precision matrix of the desired conditional distribution $Var(\mathbf{z}^{\tau}_{\eta y^m|y^o})^{-1} = Q^{\tau}_{\eta y^m}$ is banded!\\~\\  
+
+    After sampling from $p(\mathbf{z}^{\tau}_{\eta y^m|y^o})$, reverse the permutation to back out the draw of $\boldsymbol{\eta}$ and $\mathbf{y}^m$
+\end{frame}
+
+\begin{frame}{Precision-based sampling with missing observations}{Example: Graphical comparison of $\mathbf{Q}_{3b}$ and $\mathbf{Q}_{\tau}$}
+    \hspace{4.5cm} $\mathbf{Q}_{3b}$ \hspace{3.7cm} $\mathbf{Q}_{\tau}$
+
+    \vspace{0.2cm}
+    \begin{adjustbox}{minipage=0.6\textwidth,center}
+        \begin{figure}
+            \includegraphics[scale = 0.7]{fig_Q3b_Qtau.png}  \vspace{0.1cm} \\
+        \end{figure}
+            \setstretch{0.1}
+            {\tiny \textbf{Notes}: The blue dots indicate the non-zero entries in the precision matrix of the 3-block ordering (left) and the time-t permutation (right) of the discussed example with 2 variables and one factor. The highlighted upper left submatrices correspond to the conditional precision matrix of factors and missing values given observations,$\mathbf{Q}^{3b}_{\eta y^m}$ and $Q^{\tau}_{\eta y^m}$.}\par
+    \end{adjustbox}  
+
+\end{frame}
+
 
 \begin{frame}[t, allowframebreaks]{References}
     \scriptsize     

@@ -16,17 +16,21 @@
 \headcommand {\beamer@framepages {8}{8}}
 \headcommand {\slideentry {0}{0}{9}{9/9}{}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\beamer@sectionpages {1}{9}}
-\headcommand {\beamer@subsectionpages {1}{9}}
-\headcommand {\sectionentry {1}{\translate {References}}{10}{\translate {References}}{0}}
-\headcommand {\slideentry {1}{0}{0}{10/10}{}{0}}
+\headcommand {\slideentry {0}{0}{10}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {1}{0}{1}{11/11}{}{0}}
+\headcommand {\slideentry {0}{0}{11}{11/11}{}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {1}{0}{2}{12/12}{}{0}}
+\headcommand {\beamer@sectionpages {1}{11}}
+\headcommand {\beamer@subsectionpages {1}{11}}
+\headcommand {\sectionentry {1}{\translate {References}}{12}{\translate {References}}{0}}
+\headcommand {\slideentry {1}{0}{0}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\beamer@partpages {1}{12}}
-\headcommand {\beamer@subsectionpages {1}{12}}
-\headcommand {\beamer@sectionpages {1}{12}}
-\headcommand {\beamer@documentpages {12}}
-\headcommand {\gdef \inserttotalframenumber {12}}
+\headcommand {\slideentry {1}{0}{1}{13/13}{}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {1}{0}{2}{14/14}{}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\beamer@partpages {1}{14}}
+\headcommand {\beamer@subsectionpages {1}{14}}
+\headcommand {\beamer@sectionpages {1}{14}}
+\headcommand {\beamer@documentpages {14}}
+\headcommand {\gdef \inserttotalframenumber {14}}
