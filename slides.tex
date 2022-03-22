@@ -163,7 +163,7 @@ Applications in macroeconomics (with complete data) include models of trend infl
 
 Missing observations arise frequently in macroeconomic applications/datasets: different starting dates, different release patterns ("ragged edge"), outliers or mixed frequencies\\~\\
 
-In our paper, we propose a precision-sampler that can handle (most of these) applications! 
+In our paper, we propose a precision-sampler that can handle (most of) these applications! 
 
 \end{frame}
 
@@ -196,7 +196,7 @@ corresponding \textit{precision matrix} is given by $\mathbf{Q} = \Sigma^{-1} = 
     Properties of the multivariate $\mathcal{N}$: 
 
     \begin{itemize}
-        \item $\Sigma_{ij} = 0$ $\Longrightarrow$ independence of $\eta_i$ and $\eta_j$ $\Rightarrow \:Cov(\eta_i, \eta_j) \propto \phi^{|i-j|}$
+        \item $\Sigma_{ij} = 0$ $\Longrightarrow$ independence of $\eta_i$ and $\eta_j$ (in the example: $\:Cov(\eta_i, \eta_j) \propto \phi^{|i-j|}$)
         \item $\mathbf{Q}_{ij} = 0$ $\Longrightarrow$ \textbf{conditional} independence of $\eta_i$ and $\eta_j$ \\~\\
     \end{itemize}    
 
@@ -205,7 +205,7 @@ corresponding \textit{precision matrix} is given by $\mathbf{Q} = \Sigma^{-1} = 
             \includegraphics[scale = 0.65]{fig_Sigma_Q.png}  \vspace{0.1cm} \\
         \end{figure}
             \setstretch{0.1}
-            {\tiny \textbf{Notes}: The blue dots indicate the non-zero entries in the covariance matrix $\Sigma$ and precision matrix $\mathbf{Q}$ of an AR(2) process for $T=20$ observations. The former is a dense matrix while the latter is sparse and banded with lower and upper bandwidth equal to 1.}\par
+            {\tiny \textbf{Notes}: The blue dots indicate the non-zero entries in the covariance matrix $\Sigma$ and precision matrix $\mathbf{Q}$ of an AR(1) process for $T=20$ observations. The former is a dense matrix while the latter is sparse and banded with lower and upper bandwidth equal to 1.}\par
     \end{adjustbox}
 \end{frame}
 
@@ -368,7 +368,7 @@ end
     
     Conditional forecast evaluations in the literature typically condition on realizations (\citealp[][\scriptsize \textbf{JAE}\normalsize]{clarkmccracken_2017_jae}; \citealp[][\scriptsize \textbf{IJoF}\normalsize]{bgl_2015ijf}) $\Longrightarrow$ useful for model assessement and scenario analysis \\~\\  
 
-    Practitioners may also be interested in knowing how accurate forecasts will be when conditioning on forecasts $\Longrightarrow$ compare \textbf{information sets} rather than models \\~\\  
+    Practitioners may also be interested in knowing how accurate forecasts will be when conditioning on external (but quite likely imperfect) information $\Longrightarrow$ compare \textbf{information sets} rather than models \\~\\  
 
     I condition on professionals' forecasts for GDP and CPI:
     \vspace{0.2cm}
@@ -437,7 +437,7 @@ end
 
     \begin{adjustbox}{minipage=0.8\textwidth,center}
         \setstretch{0.1}
-        {\tiny \textbf{Notes}: Root mean squared forecast error (RMSFE) corresponding to unconditionalforecasts (x-axis) and forecasts conditional on professional forecasters’ view on GDP growth and CPI inflation (y-axis) for different time series. Filled points correspond to those variables for which the null hypothesis of the Diebold-Mariano test can be rejected at the 5 percent level.}\par
+        {\tiny \textbf{Notes}: Root mean squared forecast error (RMSFE) corresponding to unconditional forecasts (x-axis) and forecasts conditional on professional forecasters’ view on GDP growth and CPI inflation (y-axis) for different time series. Filled points correspond to those variables for which the null hypothesis of the Diebold-Mariano test can be rejected at the 5 percent level.}\par
 \end{adjustbox} 
 \end{frame}
 
@@ -449,7 +449,7 @@ end
 
     \begin{adjustbox}{minipage=0.8\textwidth,center}
         \setstretch{0.1}
-        {\tiny \textbf{Notes}: Average continuous ranked probability score (CRPS) corresponding to unconditionalforecasts (x-axis) and forecasts conditional on professional forecasters’ view on GDP growth and CPI inflation (y-axis) for different time series. Filled points correspond to those variables for which the null hypothesis of the Diebold-Mariano test can be rejected at the 5 percent level.}\par
+        {\tiny \textbf{Notes}: Average continuous ranked probability score (CRPS) corresponding to unconditional forecasts (x-axis) and forecasts conditional on professional forecasters’ view on GDP growth and CPI inflation (y-axis) for different time series. Filled points correspond to those variables for which the null hypothesis of the Diebold-Mariano test can be rejected at the 5 percent level.}\par
 \end{adjustbox} 
 \end{frame}
 
