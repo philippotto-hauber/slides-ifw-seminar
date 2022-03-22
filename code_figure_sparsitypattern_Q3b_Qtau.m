@@ -2,7 +2,7 @@ clear; close all;
 
 %% set-up
 Nn = 2;
-Nt = 5;
+Nt = 6;
 Nr = 1; 
 kappa = 0.8; % share of missings
 y = randn(Nn*Nt, 1);
@@ -11,6 +11,7 @@ yobs(3) = NaN;
 yobs(6) = NaN;
 yobs(7:8) = NaN; 
 yobs(10) = NaN;
+yobs(11:12) = NaN;
 Yobs = [yobs(1:2:end), yobs(2:2:end)]'; % matrix form
 eta = randn(Nt, Nr);
 z = [eta; yobs];
@@ -44,7 +45,7 @@ Q_eta_y = -Llambda' * Q_y;
 Q = [Q_eta, Q_eta_y; Q_eta_y', Q_y];
 
 %% 3-block permutation
-p_3b = [[1:Nr*Nt],[3, 6, 7, 8, 10, 1, 2, 4, 5, 9]+Nr*Nt];
+p_3b = [[1:Nr*Nt],[3, 6, 7, 8, 10, 11, 12, 1, 2, 4, 5, 9]+Nr*Nt];
 z_3b = z(p_3b);
 disp(z)
 disp(z_3b)

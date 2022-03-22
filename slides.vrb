@@ -1,6 +1,6 @@
 \frametitle{Precision-based sampling}\framesubtitle {Drawing from $p(\boldsymbol {\eta } | \mathbf {y}, \Theta )$}
     \label{precsampl_draw_eta}
-    Joint distribution of states $\boldsymbol{\eta} = \transpose{[\transpose{\boldsymbol{\eta}_1}, \cdots, \transpose{\boldsymbol{\eta}_T}]}$ and data $\mathbf{y} = \transpose{[\transpose{\mathbf{y}}_1, \cdots, \transpose{\mathbf{y}}_T]}$ given parameters:
+    Joint distribution of factors $\boldsymbol{\eta} = \transpose{[\transpose{\boldsymbol{\eta}_1}, \cdots, \transpose{\boldsymbol{\eta}_T}]}$ and data $\mathbf{y} = \transpose{[\transpose{\mathbf{y}}_1, \cdots, \transpose{\mathbf{y}}_T]}$ given parameters:
     $$
             \mathbf{z} =
             \begin{bmatrix}

@@ -3,6 +3,12 @@
 \fi
 \begin{thebibliography}{xx}
 
+\harvarditem[Banbura et al.]{Banbura, Giannone and Lenza}{2015}{bgl_2015ijf}
+{\bf Banbura, Marta, Domenico Giannone, and Michele Lenza}, ``{Conditional
+  forecasts and scenario analysis with vector autoregressions for large
+  cross-sections},'' {\it International Journal of Forecasting}, 2015, {\it 31}
+  (3), 739--756.
+
 \harvarditem[Chan]{Chan}{2020}{chan_2020jbes}
 {\bf Chan, Joshua C.~C.}, ``Large Bayesian {VAR}s: A Flexible Kronecker Error
   Covariance Structure,'' {\it Journal of Business \& Economic Statistics},
@@ -18,6 +24,18 @@
   likelihood estimation in state space models,'' {\it International Journal of
   Mathematical Modelling and Numerical Optimisation}, 2009, {\it 1} (1-2),
   101--120.
+
+\harvarditem[Clark and McCracken]{Clark and
+  McCracken}{2017}{clarkmccracken_2017_jae}
+{\bf Clark, Todd~E. and Michael~W. McCracken}, ``Tests of Predictive Ability
+  for Vector Autoregressions Used for Conditional Forecasting,'' {\it Journal
+  of Applied Econometrics}, 2017, {\it 32} (3), 533--553.
+
+\harvarditem[Ganics and Odendahl]{Ganics and
+  Odendahl}{2021}{ganicsodendahl_2021_ijf}
+{\bf Ganics, Gergely and Florens Odendahl}, ``Bayesian VAR forecasts, survey
+  information, and structural change in the euro area,'' {\it International
+  Journal of Forecasting}, 2021, {\it 37} (2), 971--999.
 
 \harvarditem[Golub and Van~Loan]{Golub and Van~Loan}{2013}{golubvanloan2013}
 {\bf Golub, Gene~H. and Charles~F.~Van Loan}, {\it Matrix Computations} Johns

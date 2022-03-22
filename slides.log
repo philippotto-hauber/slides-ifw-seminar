@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.17)  20 MAR 2022 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.17)  21 MAR 2022 20:53
 entering extended mode
 **c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/slides.tex
 (c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/slides.tex
@@ -1198,14 +1198,14 @@ LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <6> not available
 ] [4
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 211.
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 210.
  ("C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd"
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 <fig_Sigma_Q.png, id=60, 340.6326pt x 166.7028pt>
 File: fig_Sigma_Q.png Graphic file (type png)
 <use fig_Sigma_Q.png>
-Package pdftex.def Info: fig_Sigma_Q.png  used on input line 211.
+Package pdftex.def Info: fig_Sigma_Q.png  used on input line 210.
 (pdftex.def)             Requested size: 221.40855pt x 108.35551pt.
  [5
 
@@ -1236,12 +1236,7 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 17.
 
 ) [8
 
-]
-Overfull \hbox (20.844pt too wide) detected at line 340
-\OT1/lmss/bx/n/10 z[] \OT1/zplm/m/n/10 = [] \OMS/zplm/m/n/10  []  N\OT1/zplm/m/n/10 (\OT1/lmss/bx/n/10 0\OT1/lmss/m/n/10 , \OT1/lmss/bx/n/10 Q[]\OT1/zplm/m/n/10 )\OT1/lmss/m/n/10 ;  \OT1/lmss/bx/n/10 Q[] \OT1/zplm/m/n/10 = [] \OMS/zplm/m/n/10  []
- []
-
-[9
+] [9
 
 ] [10
 
@@ -1249,24 +1244,75 @@ Overfull \hbox (20.844pt too wide) detected at line 340
 <fig_Q3b_Qtau.png, id=104, 339.9099pt x 166.9437pt>
 File: fig_Q3b_Qtau.png Graphic file (type png)
 <use fig_Q3b_Qtau.png>
-Package pdftex.def Info: fig_Q3b_Qtau.png  used on input line 368.
+Package pdftex.def Info: fig_Q3b_Qtau.png  used on input line 365.
 (pdftex.def)             Requested size: 237.9353pt x 116.85977pt.
  [11
 
- <c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/fig_Q3b_Qtau.png (PNG copy)>] (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.bbl
+ <c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/fig_Q3b_Qtau.png (PNG copy)>] [12
+
+]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 405.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 405.
+ [13
+
+]
+<fig_ReutersPoll.pdf, id=128, 722.7pt x 361.35pt>
+File: fig_ReutersPoll.pdf Graphic file (type pdf)
+<use fig_ReutersPoll.pdf>
+Package pdftex.def Info: fig_ReutersPoll.pdf  used on input line 416.
+(pdftex.def)             Requested size: 325.21199pt x 162.60599pt.
+ [14
+
+ <c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/fig_ReutersPoll.pdf>] [15
+
+]
+<fig_eval_rmsfe.pdf, id=144, 722.7pt x 433.62pt>
+File: fig_eval_rmsfe.pdf Graphic file (type pdf)
+<use fig_eval_rmsfe.pdf>
+Package pdftex.def Info: fig_eval_rmsfe.pdf  used on input line 442.
+(pdftex.def)             Requested size: 289.07487pt x 173.44492pt.
+
+Overfull \vbox (0.43776pt too high) detected at line 442
+ []
+
+[16
+
+ <c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/fig_eval_rmsfe.pdf>]
+<fig_eval_crps.pdf, id=155, 722.7pt x 433.62pt>
+File: fig_eval_crps.pdf Graphic file (type pdf)
+<use fig_eval_crps.pdf>
+Package pdftex.def Info: fig_eval_crps.pdf  used on input line 454.
+(pdftex.def)             Requested size: 289.07487pt x 173.44492pt.
+
+Overfull \vbox (0.43776pt too high) detected at line 454
+ []
+
+[17
+
+ <c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/fig_eval_crps.pdf>]
+<fig_eval_robustness_Nr.pdf, id=166, 722.7pt x 433.62pt>
+File: fig_eval_robustness_Nr.pdf Graphic file (type pdf)
+<use fig_eval_robustness_Nr.pdf>
+Package pdftex.def Info: fig_eval_robustness_Nr.pdf  used on input line 467.
+(pdftex.def)             Requested size: 289.07487pt x 173.44492pt.
+ [18
+
+ <c:/Users/Philipp/Documents/GitHub/slides-ifw-seminar/fig_eval_robustness_Nr.pdf>] (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.bbl
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\translate ' on input line 4.
 
-) [12
+) [19
 
-] [13
+] [20
 
 ]
-Overfull \vbox (0.66191pt too high) detected at line 408
+Overfull \vbox (0.66191pt too high) detected at line 581
  []
 
-[14
+[21
 
 ]
 \tf@nav=\write8
@@ -1278,11 +1324,11 @@ Overfull \vbox (0.66191pt too high) detected at line 408
 \tf@snm=\write10
 \openout10 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 410.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 410.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 583.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 583.
  (c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 410.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 410.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 583.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 583.
 Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: 8A4411D8FDC471D5B1172A69FD03E390;46.
 
@@ -1291,17 +1337,17 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 29514 strings out of 492969
- 582904 string characters out of 3125697
- 809017 words of memory out of 3000000
- 32691 multiletter control sequences out of 15000+200000
- 98436 words of font info for 112 fonts, out of 3000000 for 9000
+ 29573 strings out of 492969
+ 583716 string characters out of 3125697
+ 810017 words of memory out of 3000000
+ 32726 multiletter control sequences out of 15000+200000
+ 100657 words of font info for 121 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,13n,80p,826b,2053s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmbi.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.pdf (14 pages, 307366 bytes).
+ 56i,21n,80p,826b,2053s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmb.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmbi.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C:/Users/Philipp/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on c:/Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.pdf (21 pages, 414236 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

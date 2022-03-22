@@ -153,7 +153,7 @@ escapeinside={(*@}{@*)}
     Hauber, P. (2021) \textit{How useful is external information from professional forecasters? Conditional forecasts in large factor models} \medskip
 \end{frame}
 
-\begin{frame}{Motivation}
+\begin{frame}{Precision-based sampling}{Motivation}
 
 Essential task in the Bayesian estimation of state space models: drawing from $p(\boldsymbol{\eta} | \mathbf{y}, \Theta)$ where $\boldsymbol{\eta}$ is an unobserved component, $\mathbf{y}$ is data and $\Theta$ parameters \\~\\
 
@@ -168,7 +168,7 @@ In our paper, we propose a precision-sampler that can handle (most of these) app
 \end{frame}
 
 \begin{frame}{Precision-based sampling}{Simple example}
-AR(2) process: $\eta_t = \phi_1 \eta_{t-1} + \phi_2 \eta_{t-2} + u_t; \, u_t \sim \mathcal{N}(0, \sigma^2)$ \\~\\
+AR(1) process: $\eta_t = \phi \eta_{t-1} + u_t; \, u_t \sim \mathcal{N}(0, \sigma^2)$ \\~\\
 
 Stacking the observations over $t = 1, \dots, T$ yields 
 $$
@@ -177,11 +177,10 @@ $$
 \left[
 \begin{smallmatrix}
 1 &  &  &  &  \\
--\phi_1 & 1 &  &  &  \\
--\phi_2 & -\phi_1 & 1 &  &  \\
- & -\phi_2 & -\phi_1 & 1 &  &  \\
- &  & \ddots & \ddots & \ddots &  & \\
- &  &  &  -\phi_2 & -\phi_1 & 1
+-\phi & 1 &  &  &  \\
+ & -\phi & 1 &  &  \\
+ &  & & \ddots & \ddots &  & \\
+ &  &  &  & -\phi & 1
 \end{smallmatrix}
 \right]
 $$ \medskip
@@ -197,7 +196,7 @@ corresponding \textit{precision matrix} is given by $\mathbf{Q} = \Sigma^{-1} = 
     Properties of the multivariate $\mathcal{N}$: 
 
     \begin{itemize}
-        \item $\Sigma_{ij} = 0$ $\Longrightarrow$ independence of $\eta_i$ and $\eta_j$
+        \item $\Sigma_{ij} = 0$ $\Longrightarrow$ independence of $\eta_i$ and $\eta_j$ $\Rightarrow \:Cov(\eta_i, \eta_j) \propto \phi^{|i-j|}$
         \item $\mathbf{Q}_{ij} = 0$ $\Longrightarrow$ \textbf{conditional} independence of $\eta_i$ and $\eta_j$ \\~\\
     \end{itemize}    
 
@@ -206,7 +205,7 @@ corresponding \textit{precision matrix} is given by $\mathbf{Q} = \Sigma^{-1} = 
             \includegraphics[scale = 0.65]{fig_Sigma_Q.png}  \vspace{0.1cm} \\
         \end{figure}
             \setstretch{0.1}
-            {\tiny \textbf{Notes}: The blue dots indicate the non-zero entries in the covariance matrix $\Sigma$ and precision matrix $\mathbf{Q}$ of an AR(2) process for $T=20$ observations. The former is a dense matrix while the latter is sparse and banded with lower and upper bandwidth equal to 2.}\par
+            {\tiny \textbf{Notes}: The blue dots indicate the non-zero entries in the covariance matrix $\Sigma$ and precision matrix $\mathbf{Q}$ of an AR(2) process for $T=20$ observations. The former is a dense matrix while the latter is sparse and banded with lower and upper bandwidth equal to 1.}\par
     \end{adjustbox}
 \end{frame}
 
@@ -249,12 +248,11 @@ end
 \begin{frame}{Precision-based sampling}{Factor model}
     To fix ideas, consider the following factor model:
     \begin{align*}
-        \mathbf{y}_t &= \lambda \boldsymbol{\eta}_t + \mathbf{e}_t \\
-        \mathbf{e}_t &= \phi^{e} \mathbf{e}_{t-1} + \boldsymbol{\epsilon}_t;\: \boldsymbol{\epsilon}_t \sim \mathcal{N}(0, diag([\sigma^2_1, \cdots, \sigma^2_N])) \\
+        \mathbf{y}_t &= \lambda \boldsymbol{\eta}_t + \mathbf{e}_t ;\: \mathbf{e}_t \sim \mathcal{N}(0, \Sigma_e)\\
         \boldsymbol{\eta}_t &= \phi^{\eta} \boldsymbol{\eta}_{t-1} + \mathbf{u}_t;\: \mathbf{u}_t \sim \mathcal{N}(0, \Sigma_u)
     \end{align*}
 
-    where $\mathbf{y}_t$ is an $N\times 1$ vector of data and $\eta_t$ is an $R\times 1$ vector of unobserved factors \\~\\
+    where $\mathbf{y}_t$ is an $N\times 1$ vector of data, $\boldsymbol{\eta}_t$ is an $R\times 1$ vector of unobserved factors and $\Sigma_e = diag([\sigma^2_1, \cdots, \sigma^2_N]))$ a diagonal matrix \\~\\
 
     Bayesian estimation of the model is done via a Gibbs Sampler which sequentially draws from \vspace{0.2cm}
     \begin{itemize}
@@ -268,7 +266,7 @@ end
 
 \begin{frame}[fragile]{Precision-based sampling}{Drawing from $p(\boldsymbol{\eta} | \mathbf{y}, \Theta)$}
     \label{precsampl_draw_eta}
-    Joint distribution of states $\boldsymbol{\eta} = \transpose{[\transpose{\boldsymbol{\eta}_1}, \cdots, \transpose{\boldsymbol{\eta}_T}]}$ and data $\mathbf{y} = \transpose{[\transpose{\mathbf{y}}_1, \cdots, \transpose{\mathbf{y}}_T]}$ given parameters: 
+    Joint distribution of factors $\boldsymbol{\eta} = \transpose{[\transpose{\boldsymbol{\eta}_1}, \cdots, \transpose{\boldsymbol{\eta}_T}]}$ and data $\mathbf{y} = \transpose{[\transpose{\mathbf{y}}_1, \cdots, \transpose{\mathbf{y}}_T]}$ given parameters: 
     $$
             \mathbf{z} =
             \begin{bmatrix}
@@ -301,7 +299,7 @@ end
 \begin{frame}{Precision-based sampling with missing observations}{Drawing from $p(\boldsymbol{\eta}, \mathbf{y}^m | \mathbf{y}^o, \Theta)$: 3 block ordering}
     What to do when some observations in $\mathbf{y}$ are missing? \\~\\
 
-    E.g. a model with one factor and data $\mathbf{y}=\transpose{[y_{11}, y_{12}, \text{NaN}, y_{22}, y_{31}, \text{NaN},  \text{NaN}, \text{NaN}, y_{51}, \text{NaN}]}$\\~\\
+    E.g. a model with one factor, two variables and $t=1:6$ with $$\mathbf{y}=\transpose{[y_{11}, y_{12}, \text{NaN}, y_{22}, y_{31}, \text{NaN},  \text{NaN}, \text{NaN}, y_{51}, \text{NaN},  \text{NaN},  \text{NaN}]}$$\\~\\
 
     Reorder the model in 3 blocks as: 
     $$
@@ -318,13 +316,14 @@ end
     \end{bmatrix}     
     \sim        
     \mathcal{N}(\mathbf{0}, \mathbf{Q}_{3b}^{-1})
-    ; \: \mathbf{Q}_{3b} = 
-    \begin{bmatrix}
-        \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta, y^m} & \mathbf{Q}_{\eta y^o} \\
-        \transpose{\mathbf{Q}}_{\eta, y^m} & \mathbf{Q}_{y^m} & \mathbf{Q}_{y^m, y^o} \\
-        \transpose{\mathbf{Q}}_{\eta, y^o} & \transpose{\mathbf{Q}}_{y^m, y^o} & \mathbf{Q}_{y^o}
-    \end{bmatrix}   
-    \equiv
+    ; \: \mathbf{Q}_{3b} 
+    = 
+    % \begin{bmatrix}
+    %     \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta, y^m} & \mathbf{Q}_{\eta y^o} \\
+    %     \transpose{\mathbf{Q}}_{\eta, y^m} & \mathbf{Q}_{y^m} & \mathbf{Q}_{y^m, y^o} \\
+    %     \transpose{\mathbf{Q}}_{\eta, y^o} & \transpose{\mathbf{Q}}_{y^m, y^o} & \mathbf{Q}_{y^o}
+    % \end{bmatrix}   
+    % \equiv
     \begin{bmatrix}
         \mathbf{Q}^{3b}_{\eta y^m} & \mathbf{Q}^{3b}_{\eta y^m, y^o}  \\
         \mathbf{Q}^{3b, \sf{T}}_{\eta y^m, y^o} & \mathbf{Q}^{3b}_{ y^o} 
@@ -335,22 +334,21 @@ end
     $$\mathbf{z}_{3b} = \transpose{   
     [\textcolor{myblue}{\boldsymbol{\eta}}, \textcolor{myred}{\mathbf{y^m}}, \textcolor{amber}{\mathbf{y^o}}]
     } = 
-    \transpose{[\textcolor{myblue}{\eta_1}, \textcolor{myblue}{\eta_2}, \textcolor{myblue}{\eta_3}, \textcolor{myblue}{\eta_5}, \textcolor{myblue}{\eta_5}, \textcolor{myred}{y_{21}}, \textcolor{myred}{y_{32}}, \textcolor{myred}{y_{41}}, \textcolor{myred}{y_{42}}, \textcolor{myred}{y_{52}},\textcolor{amber}{y_{11}}, \textcolor{amber}{y_{12}}, \textcolor{amber}{y_{22}}, \textcolor{amber}{y_{31}}, \textcolor{amber}{y_{51}}]}
+    \transpose{[\textcolor{myblue}{\eta_1}, \textcolor{myblue}{\dots}, \textcolor{myblue}{\eta_6}, \textcolor{myred}{y_{21}}, \textcolor{myred}{y_{32}}, \textcolor{myred}{y_{41}}, \textcolor{myred}{y_{42}}, \textcolor{myred}{y_{52}}, \textcolor{myred}{y_{61}}, \textcolor{myred}{y_{62}}, \textcolor{amber}{y_{11}}, \textcolor{amber}{y_{12}}, \textcolor{amber}{y_{22}}, \textcolor{amber}{y_{31}}, \textcolor{amber}{y_{51}}]}
     $$    
 \end{frame}
 
 \begin{frame}{Precision-based sampling with missing observations}{Drawing from $p(\boldsymbol{\eta}, \mathbf{y}^m | \mathbf{y}^o, \Theta)$: time-t ordering}
 
-    However, $Var(\mathbf{z}^{3b}_{\eta y^m|y^o})^{-1} =\mathbf{Q}^{3b}_{\eta y^m}$ will in general \textbf{not} be a banded matrix, so sampling as in the case of complete data not feasible! \\~\\ 
+    However, $\mathbf{Q}^{3b}_{\eta y^m}$ will in general \textbf{not} be a banded matrix, so sampling as in the case of complete data not feasible! \\~\\ 
     
-    $\Longrightarrow$ different ordering of $\mathbf{z}$ that groups conditionally dependent components - $\boldsymbol{\eta}_t$  and $\mathbf{y}^m_t$ (\textit{time-t ordering} - together:
-    $\mathbf{z}_{\tau} = \mathcal{P}_{\tau} \mathbf{z}$ and corresponding precision matrix $Q_{\tau} = \mathcal{P}_{\tau} \mathbf{Q} \transpose{\mathcal{P}_{\tau}}$\\~\\ 
+    Different ordering of $\mathbf{z}$ that groups conditionally dependent components \textendash $\boldsymbol{\eta}_t$  and $\mathbf{y}^m_t$ (\textit{time-t ordering}) \textendash together:  $\Longrightarrow$ $\mathbf{z}_{\tau} = \mathcal{P}_{\tau} \mathbf{z}$ and corresponding precision matrix $Q_{\tau} = \mathcal{P}_{\tau} \mathbf{Q} \transpose{\mathcal{P}_{\tau}}$\\~\\ 
 
-    \textbf{Example}: $\mathbf{z}_{\mathcal{P}_{\tau}} = \transpose{[\textcolor{myblue}{\eta_1}, \textcolor{myblue}{\eta_2},  \textcolor{myred}{y_{21}}, \textcolor{myblue}{\eta_3}, \textcolor{myred}{y_{32}}, \textcolor{myblue}{\eta_4}, \textcolor{myred}{y_{41}}, \textcolor{myred}{y_{42}}, \textcolor{myblue}{\eta_5}, \textcolor{myred}{y_{52}}, \textcolor{amber}{y_{11}}, \textcolor{amber}{y_{12}}, \textcolor{amber}{y_{22}}, \textcolor{amber}{y_{31}}, \textcolor{amber}{y_{51}}]}$ \\~\\  
+    \textbf{Example}: $\mathbf{z}_{\tau} = \transpose{[\textcolor{myblue}{\eta_1}, \textcolor{myblue}{\eta_2},  \textcolor{myred}{y_{21}}, \textcolor{myblue}{\eta_3}, \textcolor{myred}{y_{32}}, \textcolor{myblue}{\eta_4}, \textcolor{myred}{y_{41}}, \textcolor{myred}{y_{42}}, \textcolor{myblue}{\eta_5}, \textcolor{myred}{y_{52}},\textcolor{myblue}{\eta_6}, \textcolor{myred}{y_{61}}, \textcolor{myred}{y_{62}}, \textcolor{amber}{y_{11}} \textcolor{amber}{, \dots, } \textcolor{amber}{y_{51}}]}$ \\~\\  
 
-    This ensures that the precision matrix of the desired conditional distribution $Var(\mathbf{z}^{\tau}_{\eta y^m|y^o})^{-1} = Q^{\tau}_{\eta y^m}$ is banded!\\~\\  
+    This ensures that the precision matrix of the conditional distribution $Q^{\tau}_{\eta y^m}$ is banded!\\~\\  
 
-    After sampling from $p(\mathbf{z}^{\tau}_{\eta y^m|y^o})$, reverse the permutation to back out the draw of $\boldsymbol{\eta}$ and $\mathbf{y}^m$
+    After sampling from $\mathbf{z}^{\tau}_{\eta y^m|y^o} \sim \mathcal{N}(-\mathbf{Q}^{\tau -1}_{\eta y^m} \mathbf{Q}^{\tau}_{\eta y^m, y^p} \mathbf{y^o}, \mathbf{Q}^{\tau -1}_{\eta y^m})$, reverse the permutation to back out the draw of $\boldsymbol{\eta}$ and $\mathbf{y}^m$
 \end{frame}
 
 \begin{frame}{Precision-based sampling with missing observations}{Example: Graphical comparison of $\mathbf{Q}_{3b}$ and $\mathbf{Q}_{\tau}$}
@@ -362,13 +360,113 @@ end
             \includegraphics[scale = 0.7]{fig_Q3b_Qtau.png}  \vspace{0.1cm} \\
         \end{figure}
             \setstretch{0.1}
-            {\tiny \textbf{Notes}: The blue dots indicate the non-zero entries in the precision matrix of the 3-block ordering (left) and the time-t permutation (right) of the discussed example with 2 variables and one factor. The highlighted upper left submatrices correspond to the conditional precision matrix of factors and missing values given observations,$\mathbf{Q}^{3b}_{\eta y^m}$ and $Q^{\tau}_{\eta y^m}$.}\par
+            {\tiny \textbf{Notes}: The blue dots indicate the non-zero entries in the precision matrix of the 3-block ordering (left) and the time-t permutation (right) of the discussed example with 2 variables and one factor. The highlighted upper left submatrices correspond to the conditional precision matrix of factors and missing values given observations,$\mathbf{Q}^{3b}_{\eta y^m}$ and $\mathbf{Q}^{\tau}_{\eta y^m}$.}\par
     \end{adjustbox}  
+\end{frame}
 
+\begin{frame}{Conditional forecasts in large factor models}{Motivation}
+    
+    Conditional forecast evaluations in the literature typically condition on realizations (\citealp[][\scriptsize \textbf{JAE}\normalsize]{clarkmccracken_2017_jae}; \citealp[][\scriptsize \textbf{IJoF}\normalsize]{bgl_2015ijf}) $\Longrightarrow$ useful for model assessement and scenario analysis \\~\\  
+
+    Practitioners may also be interested in knowing how accurate forecasts will be when conditioning on forecasts $\Longrightarrow$ compare \textbf{information sets} rather than models \\~\\  
+
+    I condition on professionals' forecasts for GDP and CPI:
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item (conditional) forecasts $\Longrightarrow$  missing values!
+        \item similar approach for the Euro area using BVARs: \citet[][\scriptsize \textbf{IJoF}\normalsize]{ganicsodendahl_2021_ijf}
+        \item focus of the evaluation on a large cross-section of variables not typically considered in the forecasting literature 
+    \end{itemize}    
+    
+      
+\end{frame}
+
+\begin{frame}{Conditional forecasts in large factor models}{Data}
+
+    Quarterly real-time dataset for the German economy (in total \textbf{57 series}):
+    {\footnotesize
+    \begin{itemize}
+        \item activity indicators (expenditure and production components, IP, orders, turnovers)
+        \item prices (CPI, PPI, deflators corresponding to chained volume indices from the national accounts)
+        \item labor market (employment, wages, hours worked)
+        \item financial indicators (interest rates, stock market prices, exchange rates)
+        \item survey indicators (sectoral ESI data and employment expectations index)\\~\\
+    \end{itemize}
+    }
+
+    Reuters Poll of professional forecasters
+    {\footnotesize
+    \begin{itemize}
+      \item $\approx 20$ different forecasts from private sector and research institutes, up to two quarters ahead ($h=2$) 
+      \item quarterly GDP growth and y/y CPI inflation (transformed to coincide with model definition of q/q change in CPI)
+      \item GDP (inflation) nowcasts, i.e. $h=0$, considerably (slightly) more accurate than model's unconditional forecast
+    \end{itemize}
+    }
+\end{frame}
+
+\begin{frame}{Conditional forecasts in large factor models}{Reuters Poll of professional forecasters}    
+
+    \begin{figure}
+        \includegraphics[scale = 0.45]{fig_ReutersPoll.pdf}
+    \end{figure}
+    \begin{adjustbox}{minipage=0.8\textwidth,center}
+            \setstretch{0.1}
+            {\tiny \textbf{Notes}: Median forecast from the Reuters Poll of professional forecasters for quarter-on quarter change in the comsumer price index (top panel) and quarter-on-quarter GDP growth. The forecast horizon $h$ is in quarters and relative to the reference period. Source: Thomson Reuters, author's calculations.}\par
+    \end{adjustbox} 
 \end{frame}
 
 
-\begin{frame}[t, allowframebreaks]{References}
+\begin{frame}{Conditional forecasts in large factor models}{Predictive density and forecast set-up}
+
+    Precision-based algorithms to sample from the predictive density: 
+    $$p(\mathbf{y^{\sf{f}}}|\mathbf{y^{\sf{o}}}, \mathbf{y^{\sf{c}}}) \propto \int_{\Theta} p(\mathbf{y^{\sf{f}}}|\mathbf{y^{\sf{o}}},\mathbf{y^{\sf{c}}}, \Theta) p(\Theta|\mathbf{y^{\sf{o}}}, \mathbf{y^{\sf{c}}})\, \text{d}\Theta$$ \\~\\
+
+    Estimation sample starts in 1996Q1, estimate factor model with $R=2$, Evaluation sample: 2006Q1-2017Q4 \\~\\
+
+    Point (RMSFE) and density forecast (CRPS) accuracy, relative to na\"ive benchmark \\~\\
+
+    Real-time evaluation $\Longrightarrow$ exactly mimic the information set available to professional forecasters \\~\\
+
+    Diebold-Mariano tests to assess if differences between unconditional and conditional forecast accuracy is significant
+\end{frame}
+
+\begin{frame}{Conditional forecasts in large factor models}{Results: point forecasts}
+    \begin{figure}
+        \includegraphics[scale = 0.4]{fig_eval_rmsfe.pdf}  \vspace{0.1cm} \\
+    \end{figure}
+
+    \begin{adjustbox}{minipage=0.8\textwidth,center}
+        \setstretch{0.1}
+        {\tiny \textbf{Notes}: Root mean squared forecast error (RMSFE) corresponding to unconditionalforecasts (x-axis) and forecasts conditional on professional forecasters’ view on GDP growth and CPI inflation (y-axis) for different time series. Filled points correspond to those variables for which the null hypothesis of the Diebold-Mariano test can be rejected at the 5 percent level.}\par
+\end{adjustbox} 
+\end{frame}
+
+
+\begin{frame}{Conditional forecasts in large factor models}{Results: density forecasts}
+    \begin{figure}
+        \includegraphics[scale = 0.4]{fig_eval_crps.pdf}  \vspace{0.1cm} \\
+    \end{figure}
+
+    \begin{adjustbox}{minipage=0.8\textwidth,center}
+        \setstretch{0.1}
+        {\tiny \textbf{Notes}: Average continuous ranked probability score (CRPS) corresponding to unconditionalforecasts (x-axis) and forecasts conditional on professional forecasters’ view on GDP growth and CPI inflation (y-axis) for different time series. Filled points correspond to those variables for which the null hypothesis of the Diebold-Mariano test can be rejected at the 5 percent level.}\par
+\end{adjustbox} 
+\end{frame}
+
+
+
+\begin{frame}{Conditional forecasts in large factor models}{Robustness checks}
+    \begin{figure}
+        \includegraphics[scale = 0.40]{fig_eval_robustness_Nr.pdf}  \vspace{0.1cm} \\
+    \end{figure}
+
+    \begin{adjustbox}{minipage=0.75\textwidth,center}
+        \setstretch{0.1}
+        {\tiny \textbf{Notes}: Root mean squared forecast error (RMSFE) relative to the autoregressive benchmarks for different number of factors. Entries above (below) the 45-degree line indicate that the model with two factors performs better (worse) than the alternative models.}\par
+\end{adjustbox}  
+\end{frame}
+
+\begin{frame}[t]{References}
     \scriptsize     
     \bibliographystyle{aer}
     \bibliography{biblio}
@@ -376,8 +474,83 @@ end
 
 \begin{frame}{Appendix}{Mapping from $\Theta$ to $\mathbf{Q}$}
 \label{app_mapping}
-ladida
-ladida
+Stacked model: $
+    \mathbf{z}
+    = 
+    \begin{bmatrix}
+        \boldsymbol{\eta} \\
+        \mathbf{y}
+    \end{bmatrix} 
+    = 
+    \begin{bmatrix}
+        I & 0 \\
+        \boldsymbol{\Lambda} & I 
+    \end{bmatrix}
+    \begin{bmatrix}
+        \boldsymbol{\eta} \\
+        \mathbf{e}\\
+    \end{bmatrix}
+$ where $\boldsymbol{\Lambda} = I_T \otimes \boldsymbol{\lambda}$
+
+Also, let $\mathbf{V}_e = I_T \otimes \Sigma_e$, $\mathbf{V}_u = I_T \otimes \Sigma_u$ and $
+\mathbf{H} = \begin{bmatrix}
+        1 &  &  &   \\
+        -\phi & 1 &  &  \\
+         & \ddots & \ddots &  \\
+         &  & -\phi & 1
+    \end{bmatrix}
+$
+
+Then 
+\begin{align*}
+    \mathbf{Q}_z 
+    &= 
+    \text{\sf{Var}}\left(
+    \begin{bmatrix}
+        \boldsymbol{\eta} \\
+        \mathbf{y}
+    \end{bmatrix}
+    \right)^{-1} 
+    =  
+    \left(
+    \begin{bmatrix}
+        I & 0 \\
+        \boldsymbol{\Lambda} & I
+    \end{bmatrix}
+    \begin{bmatrix}
+        \mathbf{H}^{-1} \mathbf{V}_{\!u} \transpose{\mathbf{H}^{-1}} & 0 \\
+        0 & \mathbf{V}_{\!e}
+    \end{bmatrix} 
+    \begin{bmatrix}
+        I & \transpose{\boldsymbol{\Lambda}} \\
+        0 & I
+    \end{bmatrix}
+    \right)^{-1}\\
+    &=
+    \begin{bmatrix}
+        I & -\transpose{\boldsymbol{\Lambda}} \\
+        0 & I
+    \end{bmatrix}
+    \begin{bmatrix}
+        \transpose{\mathbf{H}} \mathbf{V}_{\!u} \mathbf{H} & 0 \\
+        0 & \mathbf{V}_{\!e}
+    \end{bmatrix} 
+    \begin{bmatrix}
+        I & 0 \\
+        -\boldsymbol{\Lambda} & I 
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+         \transpose{\mathbf{H}} \mathbf{V}_{\!u} \mathbf{H} + \transpose{\boldsymbol{\Lambda}}\mathbf{V}_{e}\boldsymbol{\Lambda}  & -\transpose{\boldsymbol{\Lambda}} \mathbf{V}_{\!e} \\
+         -\mathbf{V}_{\!e} \boldsymbol{\Lambda} & \mathbf{V}_{\!e}
+    \end{bmatrix}
+    \equiv 
+    \begin{bmatrix}
+        \mathbf{Q}_{\eta} & \mathbf{Q}_{\eta y} \\
+        \transpose{\mathbf{Q}}_{\eta y} & \mathbf{Q}_{y}  
+    \end{bmatrix}
+\end{align*}
+
 \end{frame}
 
 \begin{frame}{Appendix}{\citet[][Algorithm 2.1, 2.4]{rueheld_book2005}}

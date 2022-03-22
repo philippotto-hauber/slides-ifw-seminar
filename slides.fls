@@ -515,22 +515,50 @@ INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cms
 OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
 INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
 INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.vrb
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7m.vf
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\fplmri.tfm
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatino\pplri8r.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\zplmr7m.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\zplmr7y.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\zplmr7v.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\zplmr7t.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7y.vf
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\fplmr.tfm
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatino\pplr8r.tfm
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatino\pplri8r.tfm
-INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
-INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
-INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
-INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
-INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_Q3b_Qtau.png
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7m.vf
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\fplmri.tfm
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmmi10.tfm
-INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\adobe\palatino\pplri8r.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7t.vf
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_ReutersPoll.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_ReutersPoll.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_ReutersPoll.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_ReutersPoll.pdf
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmr7t.vf
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_rmsfe.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_rmsfe.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_rmsfe.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_rmsfe.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_crps.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_crps.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_crps.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_crps.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_robustness_Nr.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_robustness_Nr.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_robustness_Nr.pdf
+INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\fig_eval_robustness_Nr.pdf
 INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.bbl
 INPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.bbl
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\vf\public\mathpazo\zplmb7t.vf
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\mathpazo\fplmb.tfm
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmbx10.tfm
 OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.nav
 OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.toc
 OUTPUT c:\Users\Philipp\Documents\GitHub\slides-ifw-seminar\slides.snm
@@ -550,6 +578,8 @@ INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsf
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmb.pfb
+INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmb.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmbi.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmbi.pfb
 INPUT C:\Users\Philipp\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\mathpazo\fplmr.pfb
