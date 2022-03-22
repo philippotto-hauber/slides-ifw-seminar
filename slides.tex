@@ -342,7 +342,7 @@ end
 
     However, $\mathbf{Q}^{3b}_{\eta y^m}$ will in general \textbf{not} be a banded matrix, so sampling as in the case of complete data not feasible! \\~\\ 
     
-    Different ordering of $\mathbf{z}$ that groups conditionally dependent components \textendash $\boldsymbol{\eta}_t$  and $\mathbf{y}^m_t$ (\textit{time-t ordering}) \textendash together:  $\Longrightarrow$ $\mathbf{z}_{\tau} = \mathcal{P}_{\tau} \mathbf{z}$ and corresponding precision matrix $Q_{\tau} = \mathcal{P}_{\tau} \mathbf{Q} \transpose{\mathcal{P}_{\tau}}$\\~\\ 
+    Different ordering of $\mathbf{z}$ that groups conditionally dependent components \textendash\, $\boldsymbol{\eta}_t$  and $\mathbf{y}^m_t$ (\textit{time-t ordering}) \textendash\, together:  $\Longrightarrow$ $\mathbf{z}_{\tau} = \mathcal{P}_{\tau} \mathbf{z}$ and corresponding precision matrix $Q_{\tau} = \mathcal{P}_{\tau} \mathbf{Q} \transpose{\mathcal{P}_{\tau}}$\\~\\ 
 
     \textbf{Example}: $\mathbf{z}_{\tau} = \transpose{[\textcolor{myblue}{\eta_1}, \textcolor{myblue}{\eta_2},  \textcolor{myred}{y_{21}}, \textcolor{myblue}{\eta_3}, \textcolor{myred}{y_{32}}, \textcolor{myblue}{\eta_4}, \textcolor{myred}{y_{41}}, \textcolor{myred}{y_{42}}, \textcolor{myblue}{\eta_5}, \textcolor{myred}{y_{52}},\textcolor{myblue}{\eta_6}, \textcolor{myred}{y_{61}}, \textcolor{myred}{y_{62}}, \textcolor{amber}{y_{11}} \textcolor{amber}{, \dots, } \textcolor{amber}{y_{51}}]}$ \\~\\  
 
@@ -421,7 +421,7 @@ end
     Precision-based algorithms to sample from the predictive density: 
     $$p(\mathbf{y^{\sf{f}}}|\mathbf{y^{\sf{o}}}, \mathbf{y^{\sf{c}}}) \propto \int_{\Theta} p(\mathbf{y^{\sf{f}}}|\mathbf{y^{\sf{o}}},\mathbf{y^{\sf{c}}}, \Theta) p(\Theta|\mathbf{y^{\sf{o}}}, \mathbf{y^{\sf{c}}})\, \text{d}\Theta$$ \\~\\
 
-    Estimation sample starts in 1996Q1, estimate factor model with $R=2$, Evaluation sample: 2006Q1-2017Q4 \\~\\
+    Estimation sample starts in 1996Q1, factor model with $R=2$, evaluation sample: 2006Q1-2017Q4 \\~\\
 
     Point (RMSFE) and density forecast (CRPS) accuracy, relative to na\"ive benchmark \\~\\
 
@@ -492,7 +492,7 @@ Stacked model: $
     \end{bmatrix}
 $ where $\boldsymbol{\Lambda} = I_T \otimes \boldsymbol{\lambda}$
 
-Also, let $\mathbf{V}_e = I_T \otimes \Sigma_e$, $\mathbf{V}_u = I_T \otimes \Sigma_u$ and $
+Also, let $\mathbf{V}_{\!e} = I_T \otimes \Sigma_e = \mathbf{S}_{e}^{-1}$, $\mathbf{V}_{\!u} = I_T \otimes \Sigma_u = \mathbf{S}_{u}^{-1}$ and $
 \mathbf{H} = \begin{bmatrix}
         1 &  &  &   \\
         -\phi & 1 &  &  \\
@@ -532,8 +532,8 @@ Then
         0 & I
     \end{bmatrix}
     \begin{bmatrix}
-        \transpose{\mathbf{H}} \mathbf{V}_{\!u} \mathbf{H} & 0 \\
-        0 & \mathbf{V}_{\!e}
+        \transpose{\mathbf{H}} \mathbf{S}_{u} \mathbf{H} & 0 \\
+        0 & \mathbf{S}_{e}
     \end{bmatrix} 
     \begin{bmatrix}
         I & 0 \\
@@ -541,8 +541,8 @@ Then
     \end{bmatrix} \\
     &=
     \begin{bmatrix}
-         \transpose{\mathbf{H}} \mathbf{V}_{\!u} \mathbf{H} + \transpose{\boldsymbol{\Lambda}}\mathbf{V}_{e}\boldsymbol{\Lambda}  & -\transpose{\boldsymbol{\Lambda}} \mathbf{V}_{\!e} \\
-         -\mathbf{V}_{\!e} \boldsymbol{\Lambda} & \mathbf{V}_{\!e}
+         \transpose{\mathbf{H}} \mathbf{S}_{u} \mathbf{H} + \transpose{\boldsymbol{\Lambda}}\mathbf{V}_{e}\boldsymbol{\Lambda}  & -\transpose{\boldsymbol{\Lambda}} \mathbf{S}_{e} \\
+         -\mathbf{S}_{e} \boldsymbol{\Lambda} & \mathbf{S}_{e}
     \end{bmatrix}
     \equiv 
     \begin{bmatrix}
